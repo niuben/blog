@@ -114,7 +114,7 @@ commonModulesCount.forEach(function(count, idx) {
     reallyUsedModules.push(module);
 })
 ```
-
+<!-- more -->
 #### 将大于minChunks的module存入到reallyUsedModules中；
 ```js
 reallyUsedModules.forEach(function(module) {
@@ -153,4 +153,3 @@ asyncChunk.origins = reallyUsedChunks.map(function(chunk) {
 }, []);
 ```
 
-end

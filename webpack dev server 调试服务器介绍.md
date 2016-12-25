@@ -24,7 +24,7 @@ webpack-dev-server主要有下面几个功能：
     publicPath: "/dest/"
   }
 ```
-
+<!-- more -->
 publicPath和path属性的区别是，publicPath是Url，path只是一个文件路径。publicPath比path适用的范围更广。
 
 ## Automatic Refresh 自动刷新

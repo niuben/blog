@@ -11,7 +11,7 @@ comments: true
 当设置为inline-block，再设置其中元素margin-top的时候，会导致所有的兄弟元素都起这个作用。但是设置为float的话，就没有这个问题。
 
 看看下面的截图：
-
+<!-- more -->
 inline-block: ![inline-block截图](http://img.my.csdn.net/uploads/201303/21/1363864430_6259.JPG)
 float: ![float截图](http://img.my.csdn.net/uploads/201303/21/1363864490_8104.JPG)              
 

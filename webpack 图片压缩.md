@@ -13,3 +13,4 @@ img-loader可以对Gif、Png、Jpg和Svg图片进行压缩，各个图片类型�
 * opipng：压缩Png
 * pngquant：压缩Png
 * svgo：压缩Svg图片
+<!-- more -->

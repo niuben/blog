@@ -27,7 +27,7 @@ comments: true
 不过还有一种情况，是必须要考虑的，就是图片的尺寸大于屏幕的尺寸。这种情况下，我们就必须把图片进行一些缩放。缩放时候，我们用到了drawImage这个函数。我们首先来看看这个函数。drawImage(image,sx,sh,sw,sh,dx,dy,dh,dw)。
 
 当dh、dw大于sh、sw，那么图片就会被缩小，反之就会被放大。
-
+<!-- more -->
 ```html
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
 <html xmlns="http://www.w3.org/1999/xhtml">  

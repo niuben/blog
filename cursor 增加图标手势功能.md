@@ -13,5 +13,5 @@ comments: true
   IE:cursor:url(../image/left1.cur)\9;  
 ```
 cur是icon格式。\9是一种兼容的写法。
-
+<!-- more -->
 
