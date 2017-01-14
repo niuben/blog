@@ -7,7 +7,9 @@ comments: true
 ---
 ## 遇到问题
 
-　随着web应用化和复杂化，前端开发越来越多依赖第三方文件，比如React、Bootstrap、Moment等。前端加载资源文件数量也极具上升。举个例子，如果你只想用React在页面写个"Hello World"，也要引用大约160个文件(React加上ReactDOM)。一般应用还用一些类似Bootstrap等 UI框架。如果是这样的话相关依赖资源很快都能到达一百多个。比如我目前开发一个后台系统：前端框架用是React，UI库是公司的Ant，光两个依赖的资源数已经达到160多个了。
+
+　随着web应用化和复杂化，前端开发越来越多依赖第三方文件，比如React、Bootstrap、Moment等。前端加载资源文件数量也极具上升。举个例子，如果你只想用React在页面写个"Hello World"，也要引用大约160个文件(React加上ReactDOM)。一般应用还用一些类似Bootstrap等 UI框架，这样的话相关依赖资源很快都能到达一百多个。例如我目前开发一个后台系统：前端框架用是React，UI库是公司的Ant，光两个依赖的资源数已经达到160多个了。
+
 
 　这种技术选型在开发中产生一个问题：打包速度慢。做了一个时间测试，用React和Ant新建一个空项目。在没有业务逻辑前提下，通过watch监听文件变化，从文件保存、开始打包到打包结束，整个过程已经耗时大约1.5秒。当业务逻辑不断增加和更多第三方库被引入进来，这个“1.5秒”时间肯定会变大。
 
@@ -39,6 +41,7 @@ comments: true
 #### DllPlugin参数
 * path: 映射表生成路径；
 * name: bundle文件引用变量名；
+<<<<<<< Updated upstream
 * context: 设置请求上下文， 默认为webpack.config.js所在路径。
 
 #### DllReferencePlugin参数
@@ -47,6 +50,16 @@ comments: true
 * manifest: 引用一个DllPlugin生成映射表;
 * name: 映射表对应bundle的变量名；
 * sourceType: 规定引用模块的方式：比如var,commonjs,amd等，默认是var；
+=======
+* context: 设文件相对路径，默认为webpack.config.js所在路径。
+
+#### DllReferencePlugin参数
+* context: 设文件相对路径，默认为webpack.config.js所在路径；
+* scope: 
+* manifest: 引用一个DllPlugin生成映射表；
+* name: 映射表对应bundle的变量名；
+* sourceType: 命名变量名方式； 
+>>>>>>> Stashed changes
 * content: 映射表内容，默认是指manifest.content。
 
 #### 映射表manifest.json内容如下
