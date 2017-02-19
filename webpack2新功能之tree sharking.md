@@ -22,7 +22,7 @@ var path = require("path");
 var webpack = require("webpack");
 module.exports = {
     entry: {
-        app: ['./index']
+        main: ['./main']
     },
     output: {
         path: path.join(__dirname) + "/dist/",
@@ -50,7 +50,7 @@ Hash: 8ce95ccddcaf8a12428c
 Version: webpack 2.2.1
 Time: 2289ms
         Asset     Size  Chunks             Chunk Names
-app.bundle.js  65.5 kB       0  [emitted]  app
+main.bundle.js  65.5 kB       0  [emitted]  main
 ```
 __使用webpack1版本进行打包结果如下:__
 ```
@@ -58,7 +58,7 @@ Hash: 0ebab5b941295d6c81b9
 Version: webpack 1.12.2
 Time: 3793ms
         Asset    Size  Chunks             Chunk Names
-app.bundle.js  107 kB       0  [emitted]  app
+main.bundle.js  107 kB       0  [emitted]  main
 ```
 webpack2打包代码大小是65.5KB，webpack1打包代码是107KB。
 __tree-shaking让代码减少了大约40%。当第三方模块体积越大，tree-shaking的效果就会越明显.__
