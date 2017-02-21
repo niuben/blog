@@ -8,7 +8,7 @@ comments: true
 
 ## webpack2新功能之tree-shaking 
 最近webpack2正式发布，这个大版本历时一年多时间开发终于发布稳定版本。
-tree-shaking是webpack2一大亮点，从字面上能猜出大概的意思：摇一摇树很多叶子就会掉下来，__它能删除exports中没有使用的代码。__ 不过这个概念却是rollup.js首先提出来。
+tree-shaking是webpack2一大亮点，从字面上能猜出大概的意思：摇一摇树很多叶子就会掉下来，__它能删除没有被`import`引用过的代码。__ 不过这个概念却是rollup.js首先提出来。
 我们先看看它的效果怎么样？
 
 ### 测试tree-shaking效果
@@ -104,7 +104,7 @@ function(e, t, n) {
     console.log(n.i(r.a)(5))
 };
 ```
-最终生产代码中maths.js模块只有`cube`方法，删除没有被调用的`square`方法；
+最终生产代码中maths.js模块只有`cube`方法，删除没有被引用的`square`方法；
 __这是基于ES6模块化一个优化功能，使用它前提是你的代码用ES6开发的。__
 
 ### 为什么必须是ES6写法
@@ -117,7 +117,7 @@ ES6的export和import要求必须在代码顶层，不能嵌套在函数或者�
     }, 1000)
     // => error: 'import' and 'export' may only appear at the top level
 ```
-这种设计导致import无法动态加载模块，所有模块加载一开始就是固定的，从而本地构建工具才可以静态分析出模块之间调用关系，删除那些没有调用的代码。__这就是为什么tree-shaking只能用在ES6的原因__
+这种设计导致import无法动态加载模块，所有模块加载一开始就是固定的，从而本地构建工具才可以静态分析出模块之间引用关系，删除那些没有引用的代码。__这就是为什么tree-shaking只能用在ES6的原因__
 
 ### 使用场景
 当项目代码或者引用第三方库文件是ES6开发的都可以使用webpack2的tree-shaking功能。它说不定能让你的项目来一次大瘦身！
