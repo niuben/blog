@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Babel工作原理
+title: babel基本知识学习
 date: 2017/03/5 21:50
 tags: babel 
 comments: true
@@ -68,11 +68,9 @@ token序列保存每字符的类型、值、开始和结束位置，开始和结
 ```
 节点语法类型为`Identifier`时会进入该方法并打印出元素。
 
-
 ## Babel主要模块
 
 #### Babylon
-
 
 #### babel-traverse
 
@@ -83,4 +81,8 @@ token序列保存每字符的类型、值、开始和结束位置，开始和结
 ## Babel工作流程
 
 
+## 拓展阅读
 
+[Babel 用户手册](https://github.com/thejameskyle/babel-handbook/blob/master/translations/zh-Hans/user-handbook.md)
+
+[Babel 插件手册](https://github.com/thejameskyle/babel-handbook/blob/master/translations/zh-Hans/plugin-handbook.md#toc-avoid-traversing-the-ast-as-much-as-possible)
