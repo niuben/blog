@@ -10,7 +10,7 @@ comments: true
 
 ## 运行流程图
 `Babel`执行分为三个步骤：编译、处理、生成。
-[流程图](./img/bable.png)
+![流程图](Babel运行机制/bable.png)
 
 ## 编译
 编译步骤主要使用`babylon`模块。`babylon`通过词法分析和语法分析两个步骤将代码转化成`AST`。编译代码如下:
@@ -107,7 +107,7 @@ function square(n) {
 
 ### plugin运行规则
 模块化设计让`Babel`变得十分灵活和可扩展。每个`plugin`可以单独使用，也可以和其他`plugin`组合运行。当有多个`plugin`时,它们是这样运行的。
-[img][./img/plugins.png]
+![plugin流程图](Babel运行机制/plugins.png)
 
 多个`plugin`是通过串行的方式运行的。`plugin`的运行先后顺序是由`.babelrc`中`plugins`数组来决定的，按照数组排列顺序依次运行。
 
