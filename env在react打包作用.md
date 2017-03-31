@@ -20,3 +20,22 @@ React每次执行`warning`判断`NODE_ENV`是否是`production`，如果不是�
 使用webpack可以设置
 
 ### 设置后react代码是什么？
+原始代码
+> ```
+function warnNoop(publicInstance, callerName) {
+      if (process.env.NODE_ENV !== 'production') {
+        var constructor = publicInstance.constructor;
+          process.env.NODE_ENV !== 'production' ? warning(false, '%s(...): Can only update a mounted or mounting component. ' + 'This usually means you called %s() on an unmounted component. ' + 'This is a no-op. Please check the code for the %s component.', callerName, callerName, constructor && (constructor.displayName || constructor.name) || 'ReactClass') : void 0;
+     }
+}
+```
+打包后
+>```
+function warnNoop(publicInstance, callerName) {
+	  if (false) {
+	    var constructor = publicInstance.constructor;
+	    process.env.NODE_ENV !== 'production' ? warning(false, '%s(...): Can only update a mounted or mounting component. ' + 'This usually means you called %s() on an unmounted component. ' + 'This is a no-op. Please check the code for the %s component.', callerName, callerName, constructor && (constructor.displayName || constructor.name) || 'ReactClass') : void 0;
+	  }
+	}
+```
+将`process.env.NODE_ENV !== 'production'`转为`false`，从而不出现warning；
