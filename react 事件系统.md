@@ -1,3 +1,11 @@
+---
+layout: post
+title: react事件体系
+date: 2017-03-21 19:10 
+tags: css 
+comments: true
+---
+
 react集成了JavaScript事件，并加入一些自己东西变成合成事件。
 ## 事件绑定
 react事件绑定方式js绑定差不多有两种方式：
