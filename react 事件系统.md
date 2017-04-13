@@ -11,6 +11,7 @@ react事件绑定方式js绑定差不多有两种方式：
   console.log(e)
 }>
 ```
+<!-- more -->
 ### 通过`addEventLister`函数
 DOM节点有个P标签，
 ```
@@ -22,8 +23,12 @@ document.getElementsByClassName("fater")[0].addEventListener("click", function(e
   console.log(e);
 });
 ```
+
 ## 事件属性
 React为事件封装一些属性，[点击查看](https://github.com/niuben/docs/blob/master/web/react.md#事件系统)
 
-## 事件触发
-React事件冒泡方式和JavaScript完全相同
+## 事件触发流程
+React事件冒泡方式和JavaScript完全相同。
+
+
+

@@ -10,6 +10,7 @@ comments: true
 ### process.env
 `process.env`包含了很多环境信息，比如'user'等
 
+<!-- more -->
 ### React与process.env关系
 
 > process.env.NODE_ENV !== 'production' ? warning(false, 'Unsupported style property %s. Did you mean %s?%s', name, camelizeStyleName(name), checkRenderMessage(owner)) : void 0;
@@ -17,6 +18,7 @@ comments: true
 React每次执行`warning`判断`NODE_ENV`是否是`production`，如果不是的话才会执行`warning`,所以说__想让React不出现`warning`，只要将NODE_ENV_设置为`production`。
 
 ### 设置NODE_ENV
-使用webpack可以设置
+使用webpack可以设置`NODE_ENV`
+
 
 ### 设置后react代码是什么？

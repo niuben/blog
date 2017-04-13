@@ -17,6 +17,7 @@ tree-shaking是webpack2一大亮点，从字面上能猜出大概的意思：摇
     import { Router, Route, Link, browserHistory } from 'react-router';
 ```
 我们需要使用babel来编译react。react-router默认是ES5版本，需要通过`resole.mainFileds`属性来调用ES6版本。webpack.config.js配置文件如下：
+<!-- more -->
 ```js
 var path = require("path");
 var webpack = require("webpack");
@@ -52,6 +53,7 @@ Time: 2289ms
         Asset     Size  Chunks             Chunk Names
 main.bundle.js  65.5 kB       0  [emitted]  main
 ```
+
 __使用webpack1版本进行打包结果如下:__
 ```
 Hash: 0ebab5b941295d6c81b9

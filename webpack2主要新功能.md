@@ -21,7 +21,7 @@ webpack2增加对ES6支持。当使用`import`和`export`的写法时，不再�
         ]
     }
 ```
-
+<!-- more -->
 ### tree-shaking
 因为可以静态分析ES6`import`和`export`，所以webpck可以标记没有被`import`使用的代码。webpack在压缩混淆代码时会删除没有使用的代码，从而产生更小的bundle代码。
 举个官方例子说明一下：maths.js模块具有square和cube两个方法
@@ -77,6 +77,7 @@ module: {
 }
 ......
 ```
+
 ### Performance Budgets
 由于Web应用越来越复杂引入第三方库也越来越多，导致最后bundle文件越来越大。越来越大bundle文件会导致很多问题：请求文件时间变长、解析文件时间变长、页面展示时间变长等等。webpack2推出 Perfocemance Budgets 功能：当bundle文件过大时会显示警告或者错误信息。
 

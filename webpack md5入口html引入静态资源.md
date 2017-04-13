@@ -12,6 +12,7 @@ webpack对bundle文件有很好的`md5`支持，可以通过`hash`和`chunkhash`
 * 入口HTML文件中静态资源怎么防止缓存，例如：link引入reset.css情况
 * 如果入口HTML文件是前端模板，怎么支持？
 
+<!-- more -->
 ### 将动态将bundle文件引入到html中
 使用webpack官方插件html-webpack-plugin，可以将打包的bundle文件放入到指定的模板中。
 参数如下：

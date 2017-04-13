@@ -12,6 +12,7 @@ comments: true
 `Babel`执行分为三个步骤：编译、处理、生成。
 ![流程图](Babel运行机制/bable.png)
 
+<!-- more -->
 ## 编译
 编译步骤主要使用`babylon`模块。`babylon`通过词法分析和语法分析两个步骤将代码转化成`AST`。编译代码如下:
 ```
@@ -21,6 +22,7 @@ const ast = babylon.parse(code);`
 ```
 转化成`AST`结构如下：
 ```
+
 //AST
 {   
     "type": "VariableDeclaration",        

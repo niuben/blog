@@ -1,10 +1,11 @@
 ---
 layout: post
 title: webpack 根据库文件是否更新进行md5
-date: 2017/02/19 16:33
+date: 2017/02/19 16:22
 tags: webpack2  
 comments: true
 ---
+
 webpack对`bundle`文件的`md5`已经做的很好，但是有种场景的文件md5需要特别注意：对库文件md5。需要满足下面的条件：
 * 库文件很大需要分开打包，不然影响业务文件打包速度；
 * 库文件是通过`<script>`标签引入的；
@@ -13,6 +14,7 @@ webpack对`bundle`文件的`md5`已经做的很好，但是有种场景的文件
 ```html
     <script src="./lib.js" type="text/javavscript"></script>
 ```
+<!-- more -->
 `webpack.lib.config.js`单独打包`lib.js`文件
 ```
 var path = require("path");
