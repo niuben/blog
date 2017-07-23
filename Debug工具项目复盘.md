@@ -1,5 +1,5 @@
 ---
-title: 手机开发切图相关总结
+title: 工具项目复盘
 date: 2017/01/13 22:57
 tags: 项目复盘 
 comments: true
