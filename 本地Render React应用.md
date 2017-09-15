@@ -25,4 +25,6 @@ snapshot源代码中是不支持多页面的，所有的页面都被映射到`20
 ### 修改源码
 源代码在`src`文件夹中，编译代码在`lib`文件夹中。
 
+## react-snapshot-multiple方案
+将上述方案封装成react-snapshot-multiple模块
 
