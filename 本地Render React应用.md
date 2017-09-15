@@ -11,4 +11,18 @@
 react-snapshot模拟出React执行后的结果，然后将结果放入源代码中。
 
 ### 多页面支持
-snapshot源代码中是不支持多页面的，所有的页面都被映射到`200.html`中
+snapshot源代码中是不支持多页面的，所有的页面都被映射到`200.html`中。需要修改`server.js`文件
+```diff
+ app.use(publicPath,
+-       historyApiFallback({
+-         index: '/200.html',
+-         disableDotRule: true,
+-         htmlAcceptHeaders: ['text/html'],
+-       }),
+      express.static(baseDir, {index: "200.html"})
+    )
+```
+### 修改源码
+源代码在`src`文件夹中，编译代码在`lib`文件夹中。
+
+
