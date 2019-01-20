@@ -8,7 +8,7 @@
 
 ### Javascript
 - [canvas](https://github.com/niuben/blog/blob/master/2018/canvas.md)
-- [webGL]([canvas](https://github.com/niuben/blog/blob/master/2018/webGL.md))
+- [webGL](https://github.com/niuben/blog/blob/master/2018/webGL.md)
 - [引用值丢失](https://github.com/niuben/blog/blob/master/引用值丢失.md)
 - [碰撞检测方法讨论](https://github.com/niuben/blog/blob/master/碰撞检测方法讨论.md)
 
