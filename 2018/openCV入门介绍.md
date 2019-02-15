@@ -1,16 +1,13 @@
 ## openCV.js基础介绍
 
+![openCV_logo](../static/opencv_logo.png)  
+
 本文目标
 * openCV.js是什么？
 * openCV.js能做什么？
 * openCV.js怎么用？
 * openCV.js有哪些常见例子？
 * openCV.js优缺点有哪些？
-
-
-![openCV_logo](../static/opencv_logo.png)  
-
-
 
 ### 介绍
 openCV(open computer vision)是一个跨平台的计算机视觉库，主要用于图像识别和处理领域。openCV封装300多个API，实现了图像处理和识别方面的很多通用算法。
@@ -26,7 +23,7 @@ openCV.js是openCV图像处理库的JS版本，主要用于浏览器环境中。
 1. 熟悉的编程语言和开发环境;
 2. 代码实时运行，调试成本低，开发效率高;
 
-下面是openCV实现脸部美化、人脸识别的截图:
+
 
 
 ### 加载openCV.js
