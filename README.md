@@ -26,6 +26,7 @@
 
 ### 框架/库
 
+- [openCV](https://github.com/niuben/blog/blob/master/2018/openCV.md)
 - [react](https://github.com/niuben/blog/blob/master/2018/react.md)
 - [rollup](https://github.com/niuben/blog/blob/master/2018/rollup.md)
 - [webuploader](https://github.com/niuben/blog/blob/master/2018/webuploader.md)
