@@ -50,3 +50,4 @@
 - [简单法则](https://github.com/niuben/blog/blob/master/book/简单法则.md)
 - [每天最重要的2小时](https://github.com/niuben/blog/blob/master/book/每天最重要的2小时.md)
 - [学会提问](https://github.com/niuben/blog/blob/master/book/学会提问.md)
+- [认知天性](https://github.com/niuben/blog/blob/master/book/%E8%AE%A4%E7%9F%A5%E5%A4%A9%E6%80%A7.md)
