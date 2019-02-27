@@ -9,6 +9,7 @@
     * 解析
     * 排版
     * 绘制         
+
 ### 语言层
 
 * 数据结构
@@ -23,25 +24,58 @@
 * 算法
     * 递归
     * 查找
-        * 循环查找
-        * 二分查找            
-    * 插入                 
-    * 排序
+        * 遍历查找
+        * 递归查找
+        * 二分查找
+    * 插入        
+    * 排序        
     * 合并
-    * 删除
+        * 去重
+    * 删除        
     * 统计
     * 复制
+    * 求和
 * 程序
-    * 逻辑控制  
+    * 逻辑控制
+    * 继承
+    * MVC
 * JavaScript
+    * 语法
+    * 变量
+    * 执行环境
+        * 作用域
+            * 作用域链
+        * 垃圾回收
+    
     * 数据类型
-    * 表达式      
+        * typeof
+        * Undefined
+        * Null
+        * Number
+        * Boolean        
+        * String
+        * Object
+    * 表达式        
     * 函数
-    * 事件        
-    * DOM        
+        * 递归
+        * 闭包
+    * DOM
+        * 节点类型
+        * 操作
+            * 选择            
+            * 增加
+            * 删除
+            * 更新
+    * 事件
+        * 事件流
+        * 事件对象
+        * 事件委托
     * BOM
+        * Window
+        * Location
+        * History
         * Nagatior
-        * FileReader    
+        * FileReader         
 * ES6
     * import和require
     * 箭头函数        
@@ -53,6 +87,8 @@
 ### 技术层
 * 通信
     * URL
+        * 编码
+        * 解码
     * Http
     * Fetch
     * Ajax
@@ -68,8 +104,20 @@
     * IndexDB
 * 图形
     * Canvas
+        * 坐标
+        * 绘制
+        * 动画
+        * 碰撞检测
     * WebGL
+        * 着色器
+            * 着色器语言
+            * 点着色器
+            * 片着色器                           
+        * 绘制
+        * 视点
+        * 光线
     * SVG
+        * 标签
 
 ### UI层  
 * HTML    
@@ -85,9 +133,10 @@
 * 字体
 * 颜色
 * 布局
+    * 多列布局
 * 滑动门
 
-### 工程化
+## 工程化
 
 1. 环境搭建
     * 脚手架
@@ -101,7 +150,7 @@
     * 设计模式
     * SPA
     * 框架
-        * Jquery        
+        * Jquery   
         * React
             * Redux    
         * Vue
@@ -128,7 +177,7 @@
     * Code Review
 
 
-### 类库
+## 类库
 * 轮播图
     * swiper.js
 * 数据处理
@@ -136,7 +185,6 @@
     * moment.js
 * 图表
     * echarts.js
-
 * 图形
     * openCV.js
     * testflow.js
