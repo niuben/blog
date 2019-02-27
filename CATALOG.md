@@ -1,5 +1,6 @@
 ## 前端知识库
 
+![目录](./static/catalog.jpg)
 ### 理论知识
 
 * 底层
@@ -99,14 +100,14 @@
 * 轮播图
 
 * 数据处理
-    * Underscore.js
-    * Moment.js
+    * underscore.js
+    * moment.js
 
 * 图形
-    * OpenCV
-    * Testflow
-    * FaceAPI
-    * Pico
+    * openCV.js
+    * testflow.js
+    * faceAPI.js
+    * pico.js
     
 
 
