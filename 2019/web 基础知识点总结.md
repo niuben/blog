@@ -1,5 +1,6 @@
-javascript 50个基础知识点
+## javascript 50个基础知识点
 
+### javascript 
 1. 内存空间
 javascript内存分为栈和堆，栈内存中存放一些引用性值和值，堆内存存放一些对象值; 想要访问堆上的对象，需要先从栈内存中取得相应的引用值。  
 栈内存执行顺序，符合先进后出的原则;  
@@ -24,6 +25,7 @@ setTimeout和setInterval两个时间器运行时，会先在Time xx上注册，�
 
 动态作用域如下：
 ```js
+var  a = 10;
 var obj = {
     a: 1,
     test: function(){
@@ -34,9 +36,36 @@ var test = obj.test;
 ```
 
 5. 原型/原型链
-构造函数具有原型，原型中包含对象一些属性和方法。原型可以引用其他构造函数的原型从而形成原型链。
+原型的定义：构造函授默认具有属性和方法;
+构造函数具有原型，原型中包含对象一些属性和方法。原型可以引用其他构造函数的原型从而形成原型链;
+`String`、`Object`、`Array`、`Object`、`Boolean`都是原生构造函数，本质是函数，
+```js
+var a = new String("abcd"); 
+typeof a;  //object
+var a = "abcd";
+typeof a; //string
 
-6. 实例和原型
+var b = new Number("1234");
+typeof b  //object
+var c = new Boolean(true); 
+typeof c  //object
+```
+为什么通过构造函数创建出来和自定义的是两个不同的类型？ 因为构造函数创建是实例，实例必然是一个对象。通过`var`的方式创建的变量值不是一个实例;
+
+6. 构造函数、实例和原型
+构造函数: 构造函数是函数的一种。可以通过`new`的方式生成一个实例;
+   实例: 可以通过`instanceOf`判断一个变量是否是一个构造函数的实例; 实例也可以使用`constructor`指向它的构造函数;
+   原型: 构造函数具有默认属性;
+
+···js
+function Test(){
+
+}
+var test = new Test(); 
+
+test instanceOf Test // true
+test.constructor == Test //true
+···
 
 
 7. 函数继承有哪几种方式？
@@ -72,13 +101,8 @@ var test = obj.test;
 
 
 12. 函数：匿名函数、构造函数
+匿名函数让javascript变得十分灵活，通过匿名函数的组合、传递、返回等方式可以组成各种高阶函数。匿名函数是函数式编程的重要基础。
 
-
-
-13. 数据类型和转换
-
-
-14. 内存溢出几种情况
 
 
 15. 生成器和迭代器
@@ -92,9 +116,20 @@ function * generator(){
 
 ```
 
-16. promise
+16. Promise
+`Promise`可以异步编程，避免过多的回调函数;使用如下
+`Promise`怎么用`resolver`和`reject`的判断？直接在实例化过程中进行判断。
+`Promise`怎么绑定then和catch？直接绑在`Promise`事例化之后;
+```
+var fetch = new Promise(function(resolver, reject){
+    setTimeout(function(){
+        resolver && resolver()
+    }, 2000);      
+})
+```
+多个异步操作怎么做？ 可以在`then`和`catch`方法中在`new Promise()`实例化一个`Promise`出来;
 
-
+`Promise`和`Generate`的区别？ `Promise`底层是通过回调方式实现; `Generate`则使用更加高级和底层的实现方式;
 
 17. 拷贝对象
 
@@ -118,8 +153,6 @@ function reduce(value, arr, fun){
 }
 
 ```
-
-
 19. 发布订阅模式
 
 
@@ -136,17 +169,11 @@ function reduce(value, arr, fun){
 23. 浏览器解析流程？
 
 
-24. React diff算法
-
-
 25. Webpack事件流
 
 
-26. 事件流
-
-
 27. this
-
+`this`是当前作用域指针;
 
 28. 事件e对象
 
@@ -158,12 +185,60 @@ function reduce(value, arr, fun){
 
 
 31. 浅/深拷贝
-
+```js
+function deepClone(obj){
+    var cloneObj = {};
+    for(var key in obj){ //退出机制
+        cloneObj[key] = typeof obj[key] == "object" ? deepClone(obj[key]) : obj[key];  //缩小范围 
+    }
+    return cloneObj
+}
+```
 
 32. call/apply
+`call`和`apply`可以调用函数并指定对象，从而可以指定作用域。`call`和`apply`的区别是，`apply`可以通过数组的方式把参数一起传给函数，`call`需要一个一个参数传给函数，对于有多个参数的函数来说使用apply会比较方便;
+`call`和`apply`的第一个参数是指定`this`，从而可以指定作用域;
 
+为什么下面的函数的`call`不需要第一个参数？ 也需要第一个参数，只是第一个参数就是值本身，看下面这两个例子:
+```js
+Array.prototype.concat.call([11], [123]); // [11, 123]'
+String.prototype.splice.call("123", ""); //["1", "2", "3"];
+```
+
+33. bind
+`bind`可以绑定一个函数`this`并且可以传递一些参量，绑定成功后会返回一个函数; 执行返回函数就会在原来作用域下执行函数, `bind`时可以给函数传递参数;
+
+33. caller和callee
+`callee`是指向本函数;
+`caller`是指想调用本函数的函数;
+
+通过`callee`和`caller`的组合，就可以在不知道本函数名称的情况下，找到调用函数;
+``` 
+function A(){
+    console.log(arguments.calee.caller);
+}
+
+function B(){
+    A();    
+}
+
+B() // function B
+```
+`caller`和`call`的区别？    `caller`是一个属性，引用指向调用本函数的函数，`call`则是一个方法，可以绑定this和参量;
+
+
+34. 在数组中删除元素
+使用`splice`方法可以实现删除元素，`splice(start, length, value, value....)`，`start`是数组开始位置，`length`是删除的长度，`value`是指插入的值，如果没有`value`的话则只删除.
+不过它的副作用是会改变原来数组的值，从而导致变量的不稳定性; 比如下面的代码：
+```
+var arr = [1, 2, 3];
+arr.splice(0, 1); // 1
+console.log(arr) //2, 3 
+```
 
 33. 模块化设计
+C
+
 
 
 34. 执行环境
@@ -204,22 +279,43 @@ var foo = 20;
 2. 执行函数
 3. 
 
+
 37. 调用栈和作用域链联系和区别
 
+### React
+
+1. 生命周期
+
+2. key
+使用`key`是为了可以区别相同的元素，这样DOM节点可以不用重复创建;
+
+3. React diff算法 
+React会创建一个`Virtual DOM`保存原来的内容，数据更新后，通过`diff`这棵树来找到更新的地方。具体diff内容：
+* 先比较节点类型、属性、属性值、内容
+* 当节点不同时，会同时删除这个节点下得所有子节点;
+
+这个算法问题是寻找到一些相同节点时，在节点类型、属性、属性值和内容都相同的情况下，无法定位更新在哪里。所以引入了一个`key`的属性
+
+4. refs
+通过`refs`属性可以访问`dom`节点，从而可以操作`dom`节点。使用`refs`属性一定要`componentDidMount`以后;
+
+5. jsx
 
 
 
+### CSS
+
+1. line-height
+
+2. BFC
+
+3. 布局
+
+4. 单位
+px、pt、em、rem
 
 
-
-
-
-
-
-
-
-
-
+### 算法
 
 
 
