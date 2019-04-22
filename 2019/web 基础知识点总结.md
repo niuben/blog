@@ -314,13 +314,32 @@ React会创建一个`Virtual DOM`保存原来的内容，数据更新后，通�
 4. 单位
 px、pt、em、rem
 
+5. flex
+* disply: flex
+* 盒子属性:
+    * flex-direction: row/column(reserver) 定义主轴方向
+    * flex-wrap: nowrap/wrap/wrap-reverse 定义元素超出范围的排列方式;
+    * flex-flow: flex-direction flex-wrap的简写
+    * justify-content: flex-start/flex-end/center/space-between/space-around 定义主轴对齐方式
+    * align-items: flex-start/flex-end/center/space-between/space-around/baseline 定义交叉轴对齐方式
+    * align-content: flex-start/flex-end/center/space-between/space-around 
+    
+* 元素属性： 
+    
+    * order: 
+    * flex-grow: <num> 放大的倍数
+    * flex-shrink: <num> 缩小的倍数    
+    * flex-basis: <num> 设置区域
+    * flex: flex-grow/flex-shrink/flex-basic;
+    * align-self: flex-start/flex-end/center/space-between/space-around: 单独设置每个元素的对齐方式;
+    
+
+
+
+
+
 
 ### 算法
-
-
-
-
-
 
 
 
