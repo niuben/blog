@@ -15,8 +15,7 @@
     * 编写单元测试
     * 进行UI检测
 
-* cypresss不足
-    *
+* cypresss不足    
 
 ### 要解决的问题
 
@@ -30,62 +29,60 @@ __前端代码越来越复杂，测试成本越来越高.__
 
 
 ### cypress是什么？
-cypress具有
-
-
+cypress是前端测试工具。具有单元测试、集合测试和端到端测试整体功能，实现对代码和UI一站式测试需求。
+![cypress_compare](../static/cypress_compare.jpg)
 
 
 ### cypress怎么使用
-
 ···
 $ yarn add cypress --dev
 ···
 
-下一步 open `Cypress`
+会在项目中增加`cypress`文件夹, 先将测试代码放在`integration`中;
 
-```
-yarn run cypress open 
-```
-
-增加测试代码
+下一步 在`integration`文件夹中，创建add.func.spec.js文件，并增加单元测试代码:
 ```js
-describe('login', () => {
-  beforeEach(() => {
-    visitLoginPage()
-  })
-
-  it('A User logs in and sees a welcome message', () => {
-    loginWith('michael@example.com', 'passsword')
-
-    expect(cy.contains('Welcome back Michael')).to.exist
-  })
-
-  it('A User logs off and sees a goodbye message', () => {
-    loginWith('michael@example.com', 'password')
-    logout()
-
-    expect(cy.contains('Goodbye! See you soon!'))
-  })
-})
-
-const visitLoginPage = () => {
-  cy.visit('http://localhost:3000')
+function add(x, y){
+    return x + y;
 }
 
-const loginWith = (email, password) => {
-  cy.get('[name="email"]').type(email)
-  cy.get('[name="password"]').type(password)
-  cy.get('button').click()
-}
-const logout = () => {
-  cy.get('button').click()
-}
+describe("Test Add Function", ()=>{    
+    it("test 1 + 1 equal 2 ?", ()=>{                
+        expect(add(1, 1)).to.equal(2);
+    })
+});
+
+```
+
+下一步 open `Cypress`
+```
+yarn run cypress open
+```
+
+打开下面弹出框  
+![cypress_run_sheenshot](../static/cypress_run_sheenshot.png)
+
+下一步 点击`add.func.spec.js`文件, 会打开浏览器  
+![cypress_browser](../static/cypress_browser.png)
+
+最终显示代码测试通过;
+
+
+#### 常见的断言语法
+* equal()、not.equal()： 相等和不相等
+* above(): 大于
+* true、undefined、null、NaN: 类型判断
+
+UI测试
+```js
+    cy.get("http://10.129.192.173:3000/fes/lottery?dev=1")
+
+
 ```
 
 还可以使用下面命令：
 ```js
-yarn run cypress run 
+yarn run cypress run
 ```
-
 
 
