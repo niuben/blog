@@ -3,18 +3,7 @@
 目录
 * 要解决什么问题？
 * cypress是什么？    
-    * 断言库
-* cypress具有哪些功能？
-    * screenshot
-    * 视频
-    * 任务栏介绍    
-* cypress怎么使用？
-    * 命令行启动
-    * 
-* cypress在实际项目中的应用?
-    * 编写单元测试
-    * 进行UI检测
-
+* cypress怎么使用？    
 * cypresss不足    
 
 ### 要解决的问题
@@ -33,7 +22,7 @@ cypress是前端测试工具。具有单元测试、集合测试和端到端测�
 ![cypress_compare](../static/cypress_compare.jpg)
 
 
-### cypress怎么使用
+### cypress怎么使用?
 ···
 $ yarn add cypress --dev
 ···
@@ -41,6 +30,8 @@ $ yarn add cypress --dev
 会在项目中增加`cypress`文件夹, 先将测试代码放在`integration`中;
 
 下一步 在`integration`文件夹中，创建add.func.spec.js文件，并增加单元测试代码:
+
+单元测试
 ```js
 function add(x, y){
     return x + y;
@@ -75,14 +66,26 @@ yarn run cypress open
 
 UI测试
 ```js
-    cy.get("http://10.129.192.173:3000/fes/lottery?dev=1")
+context('Waiting', () => {
+  beforeEach(() => {
+    cy.visit('https://example.cypress.io/commands/waiting')
+  })
+  // BE CAREFUL of adding unnecessary wait times.
+  // https://on.cypress.io/best-practices#Unnecessary-Waiting
 
-
+  // https://on.cypress.io/wait
+  it('cy.wait() - wait for a specific amount of time', () => {
+    cy.get('.wait-input1').type('Wait 1000ms after typing')
+    cy.wait(1000)
+    cy.get('.wait-input2').type('Wait 1000ms after typing')
+    cy.wait(1000)
+    cy.get('.wait-input3').type('Wait 1000ms after typing')
+    cy.wait(1000)
+  })
+})
 ```
+![cypress_browser](../static/cypress_wait.png)
 
-还可以使用下面命令：
-```js
-yarn run cypress run
-```
-
-
+#### cypress有什么不足
+cypress在跨浏览器兼容测试方面有些不足，需要配合其他工具一起使用。
+![cypress_browser](../static/cypress_compare.png)
