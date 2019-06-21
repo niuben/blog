@@ -22,8 +22,9 @@ cypress是前端测试工具。具有单元测试、集合测试和端到端测�
 ![cypress_compare](../static/cypress_compare.jpg)
 
 
-### cypress怎么使用?
-···
+### cypress怎么使用? 
+
+···js
 $ yarn add cypress --dev
 ···
 
