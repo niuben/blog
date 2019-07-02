@@ -45,12 +45,12 @@ describe("This Is Unit Test", function(){
 
 
 
-
-
-
 ### 遇到问题
 
-当使用`ES5 import`方式引用文件时，会出现` 'import' and 'export' may appear only with 'sourceType: module'`错误。原因是`Cypress`对`ES5`支持不好，可以`webpack`构建来解决这个问题.
+当使用`ES5 import`方式引用文件时，会出现` 'import' and 'export' may appear only with 'sourceType: module'`错误。
+![cypress_error](../static/cypress_error.png)
+
+原因是`Cypress`对`ES5`支持不好，可以`webpack`构建来解决这个问题.
 
 首先要安装`@cypress/webpack-preprocessor`模块
 ```js
