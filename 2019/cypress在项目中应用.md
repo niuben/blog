@@ -103,6 +103,3 @@ module.exports = {
 ```
 
 从而让`Cypress`支持`ES5`格式
-
-
-
