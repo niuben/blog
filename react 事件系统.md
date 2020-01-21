@@ -25,6 +25,7 @@ DOM节点有个P标签，
 ```
 <p className="father">father</p>
 ```
+
 在`componentDidMount`生命周期中绑定
 ```
 document.getElementsByClassName("fater")[0].addEventListener("click", function(e){
