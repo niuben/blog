@@ -58,19 +58,19 @@ traverse(ast, visitor);
 ```
 ### visitor(访问者模式)
 `Babel-traverse`处理AST过程中大量使用了`visitor`模式。`visitor`是`GoF`提出的23种设计模式其中一个。主要适用于数据结构固定不变的场景，它的好处是可以将数据结构和对结构的操作分开。比如下面代码：
-```    
-    var Visitor = {
-        Identifier(path) {
-            if(path.node.name == "n") {
-                path.node.name = "x"
-            }
+```js   
+var Visitor = {
+    Identifier(path) {
+        if(path.node.name == "n") {
+            path.node.name = "x"
         }
     }
-    
+}    
 ```
 这块代码是对`Identifier(标识符)`类型进行处理：如果名称为`n`的标识符改成`x`。下面这段代码经过上面`Visitor`处理后，会变成这样：
-```
-    var n = 1;
+
+```js
+var n = 1;
 //=> var x = 1;
 ```
 如果有多个`n`也都会被修改`x`，例如
