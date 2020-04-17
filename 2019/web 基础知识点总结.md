@@ -12,6 +12,14 @@ JS是单进程，任务都是串行执行，所以任务执行慢的时候会出
 
 javascript设计一套任务队列，异步结束后会将异步操作存入队列中，队列具有先到先执行的原则，当进程空闲时会取出队列的第一个任务执行。这就是事件循环。
 
+异步操作主要有四种类型：ajax、setTimeout/setInterval、DOM事件、Promise
+* ajax: 将onready放入任务队列中;
+* setTimeout/setInterval: 
+* Promise 
+
+MacroTask MicroTask;
+
+
 3. 时间器执行逻辑
 
 setTimeout和setInterval两个时间器运行时，会先在Time xx上注册，当时间到了以后Time XX会把时间器异步任务存到任务队列中。通过事件循环方式执行异步操作。
@@ -192,6 +200,8 @@ function reduce(value, arr, fun){
 25. Webpack事件流
 
 
+
+
 27. this
 `this`是当前作用域指针;
 
@@ -323,6 +333,14 @@ React会创建一个`Virtual DOM`保存原来的内容，数据更新后，通�
 
 5. jsx
 
+6. React Hook钩子（BFC)
+
+### 模块化
+
+* export 和 module.export
+
+*
+
 
 
 ### CSS
@@ -377,18 +395,64 @@ class: 1000
 p: 100
 
 
-
-
-
-
-
 ### 算法
 
 
 
+## 50个基础知识点
+css + js + es6 + webapck + react + git + redux 
+
+1. webpack的compiler和compilation
+compiler返回webpack的上下午关键
+compilation是compiler实例
+
+2. webpack的plugin机制
+
+
+3. webpack的事件流原理
+底层使用`tapable`插件
+
+4. react的hook
+
+5. react的event
+自己封装一些属性;
+
+6. react的
+
+7. git add 和 git checkout可以将暂存区文件
+
+8. git merge做了哪些事情？
+
+9. git diff原理
+
+10. css3: box-shadow、transform、translate、key-frame、
+
+11. css3: flex
+
+12. css BFC
+BFC(Block Formatting Context) 使用块状元素、浮动元素与其它元素交互的区域; html、浮动和visible
+
+13. css haslayout
+`haslayout`是每个DOM节点的一个属性，可以通过width|height等方法触发;
+
+14. css 两栏布局
+
+15. css 三栏布局
+
+16. es6 module和 es6 class的区别
+`module`提供`export`和`import`;
+`es6`是在面向对象方面的升级;
+
+17. asyns、await
+
+18. yield
+
+
+
+
 拓展：
-    1. [setTimeout](https://mp.weixin.qq.com/s?__biz=MzI1MTE2NTE1Ng==&mid=2649515867&idx=1&sn=971a3e41da08ddf2da200d9d07af0fb0&chksm=f1efe7d0c6986ec688a746ece15f52c8df78bca37ca2609e75199f5c3fbbabd3fbcc00179885&scene=0&key=564c3e9811aee0abcc036cb111e6e7bdbe3938a8756b5bf3b98a1696b2f16c1e6e3a1b4af159d1ae1dd3e71ee5fae4e0b6655bd9f37cc81efb1174bf3ef39b43f874bc6a0482348422cc5245dfae917f&ascene=0&uin=MzIxNTY1NTU=&devicetype=iMac+MacBookPro11,1+OSX+OSX+10.12.1+build(16B2555)&version=12010210&nettype=WIFI&fontScale=100&pass_ticket=g24dIjS/70EF4QPCYwRMInMa218z6XagvevxLr5Mbzc=) 
+1. [setTimeout](https://mp.weixin.qq.com/s?__biz=MzI1MTE2NTE1Ng==&mid=2649515867&idx=1&sn=971a3e41da08ddf2da200d9d07af0fb0&chksm=f1efe7d0c6986ec688a746ece15f52c8df78bca37ca2609e75199f5c3fbbabd3fbcc00179885&scene=0&key=564c3e9811aee0abcc036cb111e6e7bdbe3938a8756b5bf3b98a1696b2f16c1e6e3a1b4af159d1ae1dd3e71ee5fae4e0b6655bd9f37cc81efb1174bf3ef39b43f874bc6a0482348422cc5245dfae917f&ascene=0&uin=MzIxNTY1NTU=&devicetype=iMac+MacBookPro11,1+OSX+OSX+10.12.1+build(16B2555)&version=12010210&nettype=WIFI&fontScale=100&pass_ticket=g24dIjS/70EF4QPCYwRMInMa218z6XagvevxLr5Mbzc=) 
 
-    2. [javascript 内存空间](https://juejin.im/entry/589c29a9b123db16a3c18adf)
+2. [javascript 内存空间](https://juejin.im/entry/589c29a9b123db16a3c18adf)
 
-    3. 
+3. 
