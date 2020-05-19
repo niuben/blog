@@ -11,4 +11,6 @@
 * promise
 * module
 * genetator
-* geneg
+* Promise、Async/Await
+* Class
+* Module

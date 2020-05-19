@@ -159,8 +159,6 @@ git stash apply
 git checkout -b 1.2.1 v1.2
 ```
 
-
-
 ### git常见问题
 
 `git fork`是从服务器对`项目代码库`做复制成为两个项目代码库，后面`push`和`pull`等操作和之前代码库没有关系。

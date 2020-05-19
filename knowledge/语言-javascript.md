@@ -1,3 +1,13 @@
+## JavaScript
+
+* 类型
+* 作用域
+* 原型
+* 事件
+* Dom
+* Bom
+
+
 * prototype chain 
 
 

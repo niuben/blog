@@ -200,8 +200,6 @@ function reduce(value, arr, fun){
 25. Webpack事件流
 
 
-
-
 27. this
 `this`是当前作用域指针;
 
@@ -337,10 +335,8 @@ React会创建一个`Virtual DOM`保存原来的内容，数据更新后，通�
 
 ### 模块化
 
-* export 和 module.export
-
-*
-
+* export 和 module.export区别
+* import和module.export的区别;
 
 
 ### CSS
@@ -409,10 +405,13 @@ compilation是compiler实例
 2. webpack的plugin机制
 
 
+
 3. webpack的事件流原理
 底层使用`tapable`插件
 
 4. react的hook
+useState和useEffect两个方法
+
 
 5. react的event
 自己封装一些属性;
@@ -422,6 +421,8 @@ compilation是compiler实例
 7. git add 和 git checkout可以将暂存区文件
 
 8. git merge做了哪些事情？
+git merge = git 
+
 
 9. git diff原理
 
@@ -444,9 +445,12 @@ BFC(Block Formatting Context) 使用块状元素、浮动元素与其它元素�
 `es6`是在面向对象方面的升级;
 
 17. asyns、await
+async和await是语法糖;
+async返回一个promise对象
+await返回一个迭代器;
+
 
 18. yield
-
 
 
 
