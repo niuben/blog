@@ -11,6 +11,65 @@ Javascript是如何执行前端代码的？
 #### 调用栈是什么？
 
 
+#### 数组乱序
+
+sort+random 换位置
+
+随便叫重新排
+
+
+#### call、apply、bind实现
+
+call(this, a, b);
+```js
+Function.prototype.call(context){    
+    context._fn = this;
+    context._fn();
+
+}
+```
+
+apply
+```js
+
+
+```
+
+bind
+```js
+
+
+```
+#### ES6继承
+extend、super
+
+
+
+#### sleep()
+
+```js
+
+async function sleep(seconds){
+    return await ...
+}
+
+```
+
+
+#### require module.exports/import export
+
+`commonjs`规范，`node`里面有个`module`构造器。每个模块都是`module`的实例。`module.exports`是指定`module`暴露内容。`exports`是`module.exports`的引用;
+
+`import`和`export`是`ES6`的模块化规范。`export`可以在多个地方导出;
+
+
+#### promise、async await、generator
+
+
+
+#### each、map、reduce
+
+
 
 
 ##### 事件循环
