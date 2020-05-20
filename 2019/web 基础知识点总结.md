@@ -1,3 +1,17 @@
+## 算法
+
+### 快排
+
+```
+function quickSort(arr, index){
+
+    
+
+
+}
+```
+
+
 ## javascript 50个基础知识点
 
 ### javascript 
@@ -13,46 +27,151 @@ Javascript是如何执行前端代码的？
 
 #### 数组乱序
 
-sort+random 换位置
+sort + random 换位置
 
-随便叫重新排
+随便叫 重新排
 
+
+#### each、map、reduce
+
+```js
+function each(arr, fn){
+    for(var i = 0; i < arr.length; i ++){
+        fn(arr[i], i);
+    }
+}
+```
+
+```js
+function map(arr, fn){
+    var mapArray = [];
+    for(var i = 0; i < arr.length; i ++){
+        mapArray[i] = fn(arr[i], i);
+    }
+    return mapArray;
+}
+```
+
+```js
+function reduce(arr, fn){
+    var sum = arr[0];                
+    for(var i = 1; i < arr.length; i ++){
+        sum = fn(sum, arr[i]);        
+    }
+    return sum;
+}
+```
 
 #### call、apply、bind实现
 
 call(this, a, b);
 ```js
-Function.prototype.call(context){    
-    context._fn = this;
-    context._fn();
-
+Function.prototype.call1 = function(context){    
+    
+    if(typeof context != "object" || context == null ) {
+        context = window
+    }
+    
+    context._fn = this;    
+        
+    var query = "(";
+    for(var i = 1; i < arguments.length; i++){
+        query += arguments[i] +  (i != arguments.length - 1 ? "," : "");
+    }    
+    query += ")";
+        
+    return eval("context._fn" + query);
 }
 ```
 
 apply
 ```js
-
-
+Function.prototype.apply1 = function(context){    
+    
+    if(typeof context != "object" || context == null ) {
+        context = window
+    }
+    
+    context._fn = this;    
+    
+    var query = "(";    
+    if(arguments[1] instanceof Array){
+        for(var i = 0; i < arguments[1].length; i++){
+            query += arguments[1][i] +  (i != arguments[1].length - 1 ? "," : "");
+        }    
+    }
+    query += ")";
+        
+    return eval("context._fn" + query);
+}
 ```
 
 bind
 ```js
+Function.prototype.bind1 = function(){
+    
+    if(typeof context != "object" || context == null ) {
+        context = window
+    }
+    
+    context._fn = this;    
+    return context._fn;
+}
+```
 
+#### promise
+
+```js
+function Promise1(fun){
+
+    this.thenCallback = null;
+    this.catchCallback = null;
+    this.finallyCallback = null;
+
+    var resolve = function(){
+        this.thenCallback && this.thenCallback.apply(this, arguments);
+        this.finallyCallback && this.finallyCallback.apply(this, arguments);
+    }
+
+    var reject = function(num){
+        this.catchCallback && this.catchCallback(this, arguments);
+        this.finallyCallback && this.finallyCallback(this, arguments);
+    }
+
+    fun(resolve, reject);
+    return this;
+}
+
+Promise1.prototype.then = function(fun){
+    this.thenCallback = fun;
+    return this;
+}
+
+Promise1.prototype.catch = function(fun){
+    this.catchCallback = fun;
+    return this;
+}
 
 ```
-#### ES6继承
-extend、super
+#### promise.all、promise.race、promise.resolve、promise.reject
 
+
+
+
+#### ES6继承()
+extend、super
 
 
 #### sleep()
 
 ```js
-
 async function sleep(seconds){
-    return await ...
+    return await new Promise((resolve, reject)=>{
+        setTimeout(function(){
+            resolve();
+        }, seconds * 1000)
+    })
 }
-
 ```
 
 
@@ -65,9 +184,77 @@ async function sleep(seconds){
 
 #### promise、async await、generator
 
+promise的实现
+```js
+
+```
+
+async await
+```js
 
 
-#### each、map、reduce
+```
+
+
+
+
+##### 对new进行模拟
+
+
+
+##### 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -174,15 +361,15 @@ function deepClone(obj){
 
 ##### closure
 
-`Closure`可以让执行上下文保留当前的函数上下文，让它不会被回收。从而可以完成很多特性
+`Closure`可以让执行上下文保留当前的函数上下文，让它不会被回收。从而可以完成很多特性;
 
-`Closure`和作用域链的关系：`Closure`是通过作用域链向上查找的方式，找到对应的变量。`Closure`
+`Closure`和作用域链的关系：`Closure`是通过作用域链向上查找的方式，找到对应的变量; 
 
 `Closure`和执行上下文关系：`Closure`包含在执行上下文中;
 
-`执行上下文`: 当程序运行时会生成一个执行上下文环境，称为`Environment Context`, 一般有两种上下文：全局上下文和函数上下文。执行上下文包含两个步骤：创建和执行。
+`执行上下文`: 当程序运行时会生成一个执行上下文环境，称为`Environment Context`, 一般有两种上下文：全局上下文和函数上下文。执行上下文包含两个步骤：创建和执行;
 
-`调用栈`: 程序运行时`javascript`会分配一个栈，栈先将全局上下文推入栈中，当遇到函数时会将函数推入栈中，执行代码时弹出栈头第一个执行上下文然后执行，执行后弹出第二个执行上下文，直到只剩一个全局上下文。
+`调用栈`: 程序运行时`javascript`会分配一个栈，栈先将全局上下文推入栈中，当遇到函数时会将函数推入栈中，执行代码时弹出栈头第一个执行上下文然后执行，执行后弹出第二个执行上下文，直到只剩一个全局上下文;
 
 
 ##### 递归
@@ -357,8 +544,8 @@ console.log(arr) //2, 3
 
 ##### 变量对象
 变量对象的三个步骤:
-a) 创建变量对象
-b) 检查上下文的函数声明：遇到`function`关键词时，会在变量对象中建立一个属性，属性值是函数的引用值；
+a) 创建变量对象;
+b) 检查上下文的函数声明：遇到`function`关键词时，会在变量对象中建立一个属性，属性值是函数的引用值;
 c) 检查上下文的变量声明：遇到`var` 变量声明时，会先检查变量对象中是否有同名属性。如果有的话就跳过，如果没有的话设置undefined;
 
 对比下面两段代码的区别
@@ -485,8 +672,37 @@ class: 1000
 p: 100
 
 
-### 算法
 
+## 工具
+
+### webpack 
+
+#### webpack loader为什么是从后往前运行？
+
+#### webpack 思想?
+
+
+
+
+### git rebase
+
+
+#### git fetch
+
+* fetch-header: 指向已经从远程仓库中拉取的最新版本;
+* commit-id: 
+
+`git fetch`拉取最新一个commit-id对应的版本到本地，并更新fetch-head
+
+`git pull = git fetch + git merge`
+
+
+## 框架
+
+`redux`的思想是将数据集中进行管理; `dispatch`进行调度; `action`传递值;
+
+
+## 
 
 
 ## 50个基础知识点
@@ -497,7 +713,6 @@ compiler返回webpack的上下午关键
 compilation是compiler实例
 
 ##### webpack的plugin机制
-
 
 
 ##### webpack的事件流原理
