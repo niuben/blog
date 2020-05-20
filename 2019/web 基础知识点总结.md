@@ -156,8 +156,6 @@ Promise1.prototype.catch = function(fun){
 #### promise.all、promise.race、promise.resolve、promise.reject
 
 
-
-
 #### ES6继承()
 extend、super
 
@@ -196,11 +194,9 @@ async await
 ```
 
 
-
-
 ##### 对new进行模拟
 
-
+创建一个对象并将构造函数中的this指向这个对象;
 
 ##### 
 
@@ -730,7 +726,6 @@ useState和useEffect两个方法
 ##### git add 和 git checkout可以将暂存区文件
 
 ##### git merge做了哪些事情？
-git merge = git 
 
 
 ##### git diff原理
