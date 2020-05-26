@@ -5,8 +5,6 @@
 ```
 function quickSort(arr, index){
 
-    
-
 
 }
 ```
