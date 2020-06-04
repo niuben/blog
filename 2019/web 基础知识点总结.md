@@ -22,6 +22,47 @@ Javascript是如何执行前端代码的？
 
 #### 调用栈是什么？
 
+#### 事件
+
+
+#### 数组
+
+splice(start, [length, [item1, [item2, [item3]]]]); 
+
+* start: 表示数组的起始位置
+    * 如果start大于数组长度，则在数组尾部添加
+    * 如果start小于0，则从数组尾部开始计数，如果start绝对值大于数组长度则0开始
+
+* length: 表示数组的
+    * length为0和负数，则在start位置上添加;
+    * length大于之后数组的长度，则start之后的数组全部删除
+    * length如果没有填写,则start之后的数组都全部删除
+* item1: 要添加的值
+
+返回值: 将删除的元素组成一个数组，如果没有删除则返回一个空数组;
+
+
+
+#### react-router关于history
+
+* pushstate
+* replacestate
+
+```js
+window.onpopstate = function(){
+
+}
+history.pushState()
+histroy.replaceState()
+history.go();
+history.back();
+```
+pushState和replaceState不会触发popState事件，只有go和back方法可以;
+
+#### async和await怎么捕获错误?
+
+`async`返回一个promise，则可以在`async`基础上增加一个then方法
+
 
 #### 数组乱序
 
@@ -450,7 +491,6 @@ function reduce(value, arr, fun){
 
 
 ##### Webpack事件流
-
 
 
 

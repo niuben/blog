@@ -9,4 +9,3 @@ gitlab ci/cd主要涉及上面三个模块：
 2. gitlab给runner分配job任务;
 3. runner返回job执行结果;
 
-
