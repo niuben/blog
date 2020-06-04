@@ -22,11 +22,13 @@
 
 ![synchook](../static/tapable/syncHook.png)
 
-![syncbailhook](../static/tapable/syncbailhook.png)
-![syncwaterfallhook](../static/tapable/syncwaterfallhook.png)
-![syncloophook](../static/tapable/syncloophook.png)
-![asyncparallelhook](../static/tapable/asyncparallelhook.png)
-![asyncparallelbailhook](../static/tapable/asyncparallelbailhook.png)
-![asyncserieshook](../static/tapable/asyncserieshook.png)
-![asyncseriesbailhook](../static/tapable/asyncseriesbailhook.png)
-![asyncserieswaterfallhook](../static/tapable/asyncserieswaterfallhook.png)
+![syncbailhook](../static/tapable/syncBailHook.png)
+
+![syncWaterfallHook](../static/tapable/syncWaterfallHook.png)
+
+![syncLoopHook](../static/tapable/syncLoopHook.png)
+![asyncParallelHook](../static/tapable/asyncParallelHook.png)
+![asyncParallelBailHook](../static/tapable/asyncParallelBailHook.png)
+![asyncseriesHook](../static/tapable/asyncSeriesHook.png)
+![asyncSeriesBailHook](../static/tapable/asyncSeriesBailHook.png)
+![asyncSeriesWaterfallHook](../static/tapable/asyncSeriesWaterfallHook.png)
