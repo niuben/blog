@@ -270,5 +270,4 @@ function render(element, container) {
   }
 }
 ```
-
-通过上面几个步骤实现
+通过上面几个步骤实现完整的Fiber Tree;
