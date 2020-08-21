@@ -253,7 +253,7 @@ function createDom(fiber) {
       dom[name] = fiber.props[name]
     })
 ​
-  return dom
+  return dom;
 }
 ```
 
