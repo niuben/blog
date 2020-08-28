@@ -179,18 +179,14 @@ Function.prototype.bind1 = function(){
 3. 函数中this都指向实例本身;
 
 ```js
-    function new(function, params){
+    function new(fn, params){
 
         var obj = {};
-        obj.__proto__ = function.prototype;
-        function.call(obj, params);
-
+        Object.setPrototype(obj,  fn.prototype);
+        fn.call(obj, params);
         return obj;
     }
-
     
-    
-
 ```
 
 
